@@ -1,7 +1,3 @@
-# permission-practice
-
-练习权限管理
-
 # Vue 3 + TypeScript + Vite
 
 This template should help get you started developing with Vue 3 and TypeScript
@@ -15,3 +11,4 @@ Learn more about the recommended Project Setup and IDE Support in the
 # permission-practice
 
 练习权限管理
+pnpm add -D unplugin-vue-components unplugin-auto-import
