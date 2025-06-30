@@ -1,10 +1,16 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
+import { getUserInfo, type LoginData } from '../../api'
 
 const form = reactive({
   username: '',
   password: '',
 })
+
+const handleSubmitClick = async () => {
+  const res = await getUserInfo(form)
+  console.log(res)
+}
 </script>
 <template>
   <div class="login-container">
@@ -24,7 +30,7 @@ const form = reactive({
         </el-form-item>
       </el-form>
       <div class="submit-button">
-        <el-button type="primary">提交</el-button>
+        <el-button type="primary" @click="handleSubmitClick">提交</el-button>
       </div>
     </el-card>
   </div>

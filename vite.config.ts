@@ -16,7 +16,7 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
     viteMockServe({
-      mockPath: 'mock',
+      mockPath: 'src/mock',
       enable: true,
       logger: true,
     }),

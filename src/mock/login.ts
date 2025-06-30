@@ -88,6 +88,7 @@ export default [
       const user = users.find(
         (item) => item.username === username && item.password === password
       )
+
       if (user) {
         return {
           code: 200,
