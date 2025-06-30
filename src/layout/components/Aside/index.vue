@@ -9,11 +9,22 @@
           <el-icon>
             <location />
           </el-icon>
-          <span>Navigator One</span>
+          <span>一级菜单</span>
         </template>
-        <el-menu-item index="1-1">item one</el-menu-item>
-        <el-menu-item index="1-2">item two</el-menu-item>
-        <el-menu-item index="1-3">item three</el-menu-item>
+        <el-menu-item index="1-1">1.1</el-menu-item>
+        <el-menu-item index="1-2">1.2</el-menu-item>
+        <el-menu-item index="1-3">1.3</el-menu-item>
+      </el-sub-menu>
+      <el-sub-menu>
+        <template #title>
+          <el-icon>
+            <location />
+          </el-icon>
+          <span>二级菜单</span>
+        </template>
+        <el-menu-item index="1-1">2.1</el-menu-item>
+        <el-menu-item index="1-2">2.2</el-menu-item>
+        <el-menu-item index="1-3">2.3</el-menu-item>
       </el-sub-menu>
     </el-menu>
   </el-scrollbar>
