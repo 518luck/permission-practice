@@ -23,13 +23,13 @@ const users: User[] = [
           {
             id: 11,
             authName: '一级项目1',
-            path: '/',
+            path: '/layout/children',
             rights: ['view', 'edit', 'add', 'delete'],
           },
           {
             id: 11,
             authName: '一级项目2',
-            path: '/',
+            path: '/layout/children',
             rights: ['view'],
           },
         ],
@@ -50,13 +50,13 @@ const users: User[] = [
           {
             id: 11,
             authName: '一级项目1',
-            path: '/',
+            path: '/layout/children',
             rights: ['view', 'edit', 'add', 'delete'],
           },
           {
             id: 11,
             authName: '一级项目2',
-            path: '/',
+            path: '/layout/children',
             rights: ['view', 'edit', 'add', 'delete'],
           },
         ],
@@ -69,7 +69,7 @@ const users: User[] = [
           {
             id: 22,
             authName: '二级项目1',
-            path: '/',
+            path: '/layout/mainconst',
             rights: ['view', 'edit', 'add', 'delete'],
           },
         ],

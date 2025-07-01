@@ -4,6 +4,7 @@ import { useRouter } from 'vue-router'
 
 import { getUserInfo } from '../../api'
 import { useInfoStore } from '../../store/index'
+import { initDynamicRoutes } from '../../router'
 
 const store = useInfoStore()
 
@@ -17,7 +18,6 @@ const form = reactive({
 
 const handleSubmitClick = async () => {
   const { data } = await getUserInfo(form)
-  console.log(data)
   const { code, message, data: info } = data
   if (code === 200) {
     ElMessage({
@@ -25,6 +25,7 @@ const handleSubmitClick = async () => {
       type: 'success',
     })
     store.setUserMenuList(info)
+    initDynamicRoutes()
     router.push('/layout')
   } else {
     ElMessage.error(message)

@@ -1,1 +1,1 @@
-<template>this is main</template>
+<template>二级菜单权限</template>

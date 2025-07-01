@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Header from './components/Header/index.vue'
-import MainConst from './components/MainConst/index.vue'
 import Aside from './components/Aside/index.vue'
 </script>
 

@@ -20,7 +20,7 @@ const store = useInfoStore()
 const { menuList } = storeToRefs(store)
 
 const handleOutClick = () => {
-  store.setUserMenuList(null)
+  sessionStorage.clear()
   router.push('/')
 }
 </script>
