@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import { useRouter } from 'vue-router'
 
 import { getUserInfo } from '../../api'
 import { useInfoStore } from '../../store/index'
@@ -9,7 +9,6 @@ const store = useInfoStore()
 
 // 获取路由实例和当前路由信息
 const router = useRouter()
-const route = useRoute()
 
 const form = reactive({
   username: '普通用户1',
