@@ -6,14 +6,16 @@ import { useInfoStore } from '../store/index'
 const one = {
   path: 'children',
   component: () => import('../views/children/index.vue'),
+  meta: '',
 }
 
 const two = {
   path: 'mainconst',
   component: () => import('../views/MainConst/index.vue'),
+  meta: '',
 }
 
-const three: { [key: string]: { path: string; component: any } } = {
+const three: { [key: string]: { path: string; component: any; meta?: any } } = {
   '/layout/children': one,
   '/layout/mainconst': two,
 }
@@ -34,6 +36,7 @@ const routes = [
     children: [
       {
         path: '',
+        name: 'home',
         component: () => import('../views/home/index.vue'),
       },
     ],
@@ -57,6 +60,7 @@ export function initDynamicRoutes() {
     item.children?.forEach((item1) => {
       if (item1.path !== undefined) {
         const routePush = three[item1.path]
+        routePush.meta = item1.rights
         if (routePush) {
           router.addRoute('layout', routePush)
         }
