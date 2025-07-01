@@ -1,5 +1,11 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia'
 import { reactive, toRefs } from 'vue'
+import { useRouter } from 'vue-router'
+
+import { useInfoStore } from '../../../store/index'
+
+const router = useRouter()
 
 const state = reactive({
   circleUrl:
@@ -10,6 +16,13 @@ const state = reactive({
 })
 
 const { circleUrl } = toRefs(state)
+const store = useInfoStore()
+const { menuList } = storeToRefs(store)
+
+const handleOutClick = () => {
+  store.setUserMenuList(null)
+  router.push('/')
+}
 </script>
 
 <template>
@@ -20,8 +33,17 @@ const { circleUrl } = toRefs(state)
     </div>
 
     <div class="header-right">
-      <span class="nameText">多云</span>
-      <el-avatar :size="35" :src="circleUrl" />
+      <span class="nameText">{{ menuList?.username }}</span>
+      <el-dropdown placement="bottom-start">
+        <el-avatar :size="35" :src="circleUrl" />
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item @click="handleOutClick"
+              >退出登录</el-dropdown-item
+            >
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
     </div>
   </header>
 </template>
@@ -51,6 +73,7 @@ const { circleUrl } = toRefs(state)
     .nameText {
       margin-right: 10px;
     }
+    cursor: pointer;
   }
 }
 </style>
