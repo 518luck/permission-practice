@@ -44,3 +44,10 @@ const two = {
 ```
 
 ## 请求和响应
+
+    // 在发送请求之前做些什么
+    const token = sessionStorage.getItem('Token')
+    //加一个if(req.url.includes('login'))
+    /*     if (config.url?.includes('login')) {
+      return config
+     } */ //就可以让其他请求带上token了

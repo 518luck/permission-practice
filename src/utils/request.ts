@@ -9,6 +9,16 @@ const http = axios.create({
 http.interceptors.request.use(
   function (config) {
     // 在发送请求之前做些什么
+    const token = sessionStorage.getItem('Token')
+    //加一个if(req.url.includes('login'))
+    /*     if (config.url?.includes('login')) {
+      return config
+     } */ //就可以让其他请求带上token了
+    if (token) {
+      // 设置到请求头
+      config.headers = config.headers || {}
+      config.headers['Authorization'] = `Bearer ${token}` // 或自定义字段
+    }
     return config
   },
   function (error) {
