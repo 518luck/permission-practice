@@ -1,10 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Login from '../views/login/index.vue'
+import { useInfoStore } from '../store/index'
 
 const routes = [
   {
     path: '/',
+    redirect: '/login',
+  },
+  {
+    path: '/login',
     component: Login,
   },
   {
@@ -34,6 +39,14 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+})
+
+router.beforeEach((to) => {
+  const store = useInfoStore()
+
+  if (!store.Token && to.path !== '/login') {
+    return '/login'
+  }
 })
 
 export default router
