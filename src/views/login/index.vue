@@ -1,17 +1,38 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
-import { getUserInfo, type LoginData } from '../../api'
+import { useRouter, useRoute } from 'vue-router'
+
+import { getUserInfo } from '../../api'
+import { useInfoStore } from '../../store/index'
+
+const store = useInfoStore()
+
+// 获取路由实例和当前路由信息
+const router = useRouter()
+const route = useRoute()
 
 const form = reactive({
-  username: '',
-  password: '',
+  username: '普通用户1',
+  password: '1',
 })
 
 const handleSubmitClick = async () => {
-  const res = await getUserInfo(form)
-  console.log(res)
+  const { data } = await getUserInfo(form)
+  console.log(data)
+  const { code, message, data: info } = data
+  if (code === 200) {
+    ElMessage({
+      message: message,
+      type: 'success',
+    })
+    store.setUserMenuList(info)
+    router.push('/layout')
+  } else {
+    ElMessage.error(message)
+  }
 }
 </script>
+
 <template>
   <div class="login-container">
     <el-card class="login-card" header="欢迎多云">

@@ -1,6 +1,6 @@
 import type { MockMethod } from 'vite-plugin-mock'
 
-interface User {
+export interface User {
   id: number
   username: string
   password: string
@@ -11,8 +11,8 @@ interface User {
 const users: User[] = [
   {
     id: 1,
-    username: '普通用户',
-    password: 'normal',
+    username: '普通用户1',
+    password: '1',
     token: 'abcdefghijklmnopqrstuvwxyz',
     rights: [
       {
@@ -38,8 +38,8 @@ const users: User[] = [
   },
   {
     id: 2,
-    username: '管理员',
-    password: 'admin',
+    username: '普通用户2',
+    password: '2',
     token: 'abcdefghijklmnopqrstuvwxyz'.split('').reverse().join(''),
     rights: [
       {

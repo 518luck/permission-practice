@@ -21,13 +21,12 @@ declare module 'vue' {
     ElMain: typeof import('element-plus/es')['ElMain']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
-    ElMenuItemGroup: typeof import('element-plus/es')['ElMenuItemGroup']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
-    RouterExample: typeof import('./src/components/RouterExample.vue')['default']
+    HelloWorld: typeof import('./components/HelloWorld.vue')['default']
+    RouterExample: typeof import('./components/RouterExample.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SimpleRouterExample: typeof import('./src/components/SimpleRouterExample.vue')['default']
+    SimpleRouterExample: typeof import('./components/SimpleRouterExample.vue')['default']
   }
 }

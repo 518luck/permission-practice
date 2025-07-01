@@ -5,10 +5,14 @@ import Login from '../views/login/index.vue'
 const routes = [
   {
     path: '/',
+    component: Login,
+  },
+  {
+    path: '/layout',
     component: () => import('../layout/index.vue'),
     children: [
       {
-        path: 'home',
+        path: '/',
         component: () => import('../views/home/index.vue'),
       },
       {
@@ -16,10 +20,6 @@ const routes = [
         component: () => import('../views/children/index.vue'),
       },
     ],
-  },
-  {
-    path: '/Login',
-    component: Login,
   },
 ]
 
