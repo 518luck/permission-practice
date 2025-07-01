@@ -15,7 +15,7 @@ import Aside from './components/Aside/index.vue'
           <Header></Header>
         </el-header>
         <el-main class="maiun">
-          <MainConst></MainConst>
+          <router-view></router-view>
         </el-main>
       </el-container>
     </el-container>

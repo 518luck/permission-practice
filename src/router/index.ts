@@ -19,7 +19,15 @@ const routes = [
         path: 'children',
         component: () => import('../views/children/index.vue'),
       },
+      {
+        path: 'mainconst',
+        component: () => import('../views/MainConst/index.vue'),
+      },
     ],
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    component: () => import('../views/404/index.vue'),
   },
 ]
 
